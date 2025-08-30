@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Jar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="jar-container">
+    <img src="images/bow.png" alt="Bow" class="bow" />
+    <h1 class="names">Gabbi + Shanis</h1>
+    <h2 class="subtitle">CREATED ON 8/31/2025</h2>
+    <img src="images/jar.png" alt="Love Jar" class="jar" />
+  </div>
+
+  <!-- Color Rectangles -->
+  <div class="color-rectangles">
+    <div class="rect" style="background-color:#5170ff; color:#000000;" data-type="sad">
+      READ ME WHEN<br>YOU’RE SAD
+    </div>
+
+    <div class="rect" style="background-color:#d86018; color:#000000;" data-type="jealous">
+      READ ME WHEN<br>YOU’RE JEALOUS
+    </div>
+
+    <div class="rect" style="background-color:#39f478; color:#000000;" data-type="tired">
+      READ ME WHEN<br>YOU’RE TIRED
+    </div>
+
+    <div class="rect" style="background-color:#ffde59; color:#000000;" data-type="happy">
+      READ ME WHEN<br>YOU’RE HAPPY
+    </div>
+
+    <div class="rect" style="background-color:#a6a6a6; color:#000000;" data-type="anxious">
+      READ ME WHEN<br>YOU’RE ANXIOUS
+    </div>
+  </div>
+
+  <!-- Love-letter modal -->
+  <div class="modal" id="loveModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalMessage">
+      <button class="close" aria-label="Close">&times;</button>
+      <div id="modalMessage"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
