@@ -5,41 +5,40 @@ const modal = document.getElementById('loveModal');
 const modalMessage = document.getElementById('modalMessage');
 const closeBtn = modal.querySelector('.close');
 
-function openModal(message, bgColor, textColor) {
+// Open modal with dynamic content and color
+function openModal(message, bgColor = '#fff', textColor = '#000') {
   modal.style.display = 'flex';
   modal.setAttribute('aria-hidden', 'false');
-  modalMessage.innerHTML = message;
-
-  // Set modal colors based on rectangle
-  const modalContent = modal.querySelector('.modal-content');
-  modalContent.style.backgroundColor = bgColor;
-  modalContent.style.color = textColor;
+  modalMessage.innerText = message;
+  modal.querySelector('.modal-content').style.backgroundColor = bgColor;
+  modal.querySelector('.modal-content').style.color = textColor;
 }
 
+// Close modal
 function closeModal() {
   modal.style.display = 'none';
   modal.setAttribute('aria-hidden', 'true');
 }
 
-// click a rectangle → show modal
+// Click a rectangle → show modal
 rects.forEach(rect => {
   rect.addEventListener('click', () => {
-    const message = rect.getAttribute('data-message') || rect.innerHTML;
+    const message = rect.getAttribute('data-message');
     const bgColor = rect.style.backgroundColor || '#fff';
     const textColor = rect.style.color || '#000';
     openModal(message, bgColor, textColor);
   });
 });
 
-// close button
+// Close modal button
 closeBtn.addEventListener('click', closeModal);
 
-// click outside closes
+// Click outside modal closes it
 window.addEventListener('click', (e) => {
   if (e.target === modal) closeModal();
 });
 
-// ESC closes
+// ESC key closes modal
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
