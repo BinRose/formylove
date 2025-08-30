@@ -1,3 +1,4 @@
+/* ---------- Base Styles ---------- */
 body {
   margin: 0;
   padding: 0;
@@ -17,7 +18,10 @@ body {
   padding-left: 50px;
 }
 
-.jar { width: 270px; margin-right: 100px; }
+.jar { 
+  width: 270px; 
+  margin-right: 100px; 
+}
 
 .bow {
   width: 450px;
@@ -29,7 +33,7 @@ body {
 /* Fonts */
 @font-face {
   font-family: 'Grimpt Brush';
-  src: url('./font/GRIMPT-BRUSH.TTF') format('truetype');
+  src: url('font/GRIMPT-BRUSH.TTF') format('truetype');
 }
 .names {
   font-family: 'Grimpt Brush', cursive;
@@ -45,7 +49,7 @@ body {
 
 @font-face {
   font-family: 'Sun Beat';
-  src: url('./font/SUNBEAT.TTF') format('truetype');
+  src: url('font/SUNBEAT.TTF') format('truetype');
 }
 .subtitle {
   font-family: 'Sun Beat', sans-serif;
@@ -105,16 +109,14 @@ body {
   border-radius: 12px;
   max-width: 480px;
   width: calc(100% - 60px);
-
   padding: 50px 60px;
   text-align: justify;
   white-space: pre-line;
   font-family: 'Sun Beat', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  color: #000;               /* black text */
+  color: #000;
   line-height: 1.8;
-
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   position: relative;
 }
@@ -132,3 +134,93 @@ body {
   cursor: pointer;
 }
 .close:hover { transform: scale(1.15) rotate(8deg); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .jar-container {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .jar {
+    width: 220px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .bow {
+    width: 350px;
+    margin-left: 0;
+    top: -130px;
+  }
+
+  .names {
+    font-size: 75px;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .subtitle {
+    font-size: 24px;
+    top: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .color-rectangles {
+    flex-wrap: wrap;
+    padding: 0 40px;
+    gap: 15px;
+  }
+
+  .rect {
+    width: 45%;
+    height: 55px;
+    font-size: 18px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 40px 50px;
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 600px) {
+  .names {
+    font-size: 55px;
+    top: 100px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    top: 180px;
+  }
+
+  .jar {
+    width: 180px;
+  }
+
+  .bow {
+    width: 250px;
+    top: -90px;
+  }
+
+  .color-rectangles {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .rect {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .modal-content {
+    font-size: 18px;
+    padding: 30px 40px;
+  }
+}
